@@ -1,0 +1,25 @@
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { fetchPosts } from "../../actions/fetchPosts.js";
+import styles from "./PostList.module.scss";
+
+export const PostList = () => {
+  const dispatch = useDispatch();
+  const posts = useSelector((state) => state.posts.posts);
+
+  useEffect(() => {
+    dispatch(fetchPosts());
+  }, []);
+
+  return (
+    <div>
+      {posts.map((post) => (
+        <div key={post.id} className={styles.post}>
+          <div className={styles.title}>{post.title}</div>
+          <div>{post.body}</div>
+        </div>
+      ))}
+    </div>
+  );
+};

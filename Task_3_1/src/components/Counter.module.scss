@@ -1,0 +1,17 @@
+.button{
+  padding: 10px 15px;
+  border-radius: 5px;
+  background-color: white;
+  border: 1px solid black;
+  margin: 10px;
+  transition: 0.5s;
+  &:hover{
+    color: white;
+    background-color: black;
+    transition: 0.5s;
+  }
+}
+.title{
+    font-weight: 400;
+  font-size: 25px;
+}
